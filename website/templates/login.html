@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Login {% endblock %}
+
+{% block style %} <link rel="stylesheet" href="{% static 'website/style.css' %}"> {% endblock %}
+
+{% block content %}
+
+<div class="section">
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-8">
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-success">
+                      <p class="title">Login</p>
+                      <p class="subtitle"></p>
+                      <div class="content">
+                        <!-- Content -->
+                        <section class="section">
+                            <div class="container">
+                              <form action="#" method="POST">   {% csrf_token %}
+                                    <div class="field is-horizontal">
+                                        <div class="field-label is-normal">
+                                            <label class="label">ID Number</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <p class="control is-expanded has-icons-left">
+                                                <input name="student-id" class="input" type="text" placeholder="VU#########">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-id-card-alt"></i>
+                                                </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                    <div class="field is-horizontal">
+                                        <div class="field-label is-normal">
+                                            <label class="label">Password</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <p class="control is-expanded has-icons-left">
+                                                    <input name="student-password" class="input" type="password" placeholder="Enter your password">
+                                                    <span class="icon is-small is-left">
+                                                        <i class="fas fa-lock"></i>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                              </form>
+                            </div>
+                        </section>      
+                      </div>    
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

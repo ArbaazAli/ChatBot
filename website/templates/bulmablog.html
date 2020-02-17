@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <title>Blog</title>
+    <style>
+        .is-paddingless-horizontal{
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: [xl-start] 1fr 1.5rem [md-start] minmax(0 ,624) [md-end] 1.5rem 1fr xl[xl-end];
+        }
+        .grid * {
+            grid-column: md;
+        }
+        .grid-xl{
+            grid-column: xl;
+        }
+    </style>
+</head>
+<body>
+    <section class="section is-paddingless-horizontal">
+        <div class="container grid">
+            <nav class="breadcrumb grid-xl" aria-label="breadcrumbs">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li class="is-active"><a href="#" aria-current="page">How to make a Blog</a></li>
+                </ul>
+              </nav>
+        </div>
+    </section>
+    <section class="section is-paddingless-horizontal">
+        <div class="container">
+            <article class="media">
+                <figure class="media-left">
+                    <figure class="image is-64x64">
+                        <img src="" alt="">
+                    </figure>
+                </figure>
+                <div class="media-content">
+                    <div class="content">
+
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

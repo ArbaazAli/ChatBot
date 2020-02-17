@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} ChatBot {% endblock %}
+{% block style %} <style>
+    .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style> {% endblock %}
+{% block content %}
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="tile is-ancestor">
+                <div class="tile is-vertical is-8">
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-danger">
+                          <p class="title">Wide tile</p>
+                          <p class="subtitle">Aligned with the right tile</p>
+                          <div class="content">
+                            <!-- Content -->
+                            {{output}}
+                            <form action="#" method="POST"> {% csrf_token %}
+                                <div class="control ">
+                                    <input name="input" class="input is-large is-rounded is-success" type="text" placeholder="Enter text...">
+                                </div>
+                                <div class="control">
+                                    <button class="button"> 
+                                        <span class="icon is-small">
+                                            <i class="fas fa-paper-plane"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </form>
+                            
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vel, quam at cum, consequatur voluptatum sequi dolore pariatur sed recusandae molestiae ipsa sint eius repellendus animi explicabo iste voluptatem soluta facere vitae voluptas suscipit et, quasi obcaecati! Sequi repellat vel sed illum, alias totam nemo at voluptatem est, ab architecto?
+                          </div>    
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+
+{% endblock %}

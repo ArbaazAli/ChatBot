@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Welcome {% endblock %}
+{% block style %} <style>
+    .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style> {% endblock %}
+{% block content %}
+<section class="hero is-fullheight has-background-black">
+    <div class="hero-body">
+        <div class="container">
+            <figure class="image center">
+                <img src="{% static 'website/img/student.png' %}" style="max-width: 256px;">
+            </figure>
+            <div class="field is-grouped is-grouped-centered" style="margin-top: 20px;">
+              <a href="{% url 'register' %}">
+                <button class="button is-primary is-medium">
+                    <span class="icon">
+                      <i class="fas fa-user-plus"></i>
+                    </span>
+                    <span>Register</span>
+                </button>
+              </a>
+              <a href="{% url 'login' %}">
+                <button class="button is-success is-medium" style="margin-left: 8px;">
+                  <span class="icon is-small">
+                    <i class="fas fa-user"></i>
+                  </span>
+                  <span>Login</span>
+                </button>
+              </a>
+            </div>          
+        </div>  
+    </div>
+    
+  </section>
+  {% block footer %}
+  {% endblock %}
+  
+{% endblock %}

@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Register {% endblock %}
+{% block style %} 
+<link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+<style>
+    .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style> {% endblock %}
+{% block content %}
+<section class="section">
+    <h1 class="title center has-text-danger">REGISTER</h1>
+    <div class="container">
+
+        <form action="{% url 'login' %}" method="POST">   {% csrf_token %}
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Full Name</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left">
+                        <input name="student-name" class="input" type="text" placeholder="FirstName MiddleName LastName">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user-graduate"></i>
+                        </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">ID Number</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left">
+                        <input name="student-id" class="input" type="text" placeholder="VU#########" required>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-id-card-alt"></i>
+                        </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Email</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left">
+                        <input name="student-email" class="input" type="email" placeholder="example@gmail.com">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Contact Number</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-expanded">
+                        <div class="field has-addons">
+                            <p class="control">
+                                <a class="button is-static">+91</a>
+                            </p>
+                            <p class="control is-expanded has-icons-right">
+                                <input name="student-contact" class="input" type="tel">
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <p class="help">Do not enter the first zero</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Department</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-narrow">
+                        <div class="control has-icons-left">
+                            <div class="select is-fullwidth is-rounded">
+                                <select name="student-branch">
+                                    <option disabled selected>Choose one</option>
+                                    <option>Computer Engg</option>
+                                    <option>IT</option>
+                                    <option>EXTC</option>
+                                </select>
+                            </div>
+                            <div class="icon is-small is-left">
+                                <i class="fas fa-book"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Password</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left">
+                            <input name="student-password" class="input" type="password" placeholder="Choose a password">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Re-Enter Password</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left">
+                            <input name="student-password2" class="input" type="password" placeholder="Confirm password">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label">
+                    <!-- Left empty for spacing -->
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <button  class="button is-success is-outlined">
+                                <span>Register</span>
+                                <span class="icon is-small">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+  </section>
+
+{% endblock %}
