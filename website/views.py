@@ -5,15 +5,15 @@ from .models import Student
 def home(request):
     return render(request, 'index.html')
 
-'''
-def home(request):
+
+def bot(request):
     user = "hello"
     chatbot = "hello how are you doing!!"
     if request.method == 'POST':
         output = request.POST['input']
         return render(request, 'chatbot.html', {'output' : output})
     return render(request, 'chatbot.html', {'user': user, 'chatbot': chatbot,})
-'''
+
 
 def register(request):
     if request.method == 'POST':
@@ -26,7 +26,6 @@ def register(request):
         student_password2 = request.POST['student-password2']
         data = Student(student_name = student_name, student_id = student_id, student_contact = student_contact, student_email = student_email, student_branch = student_branch, password = student_password, confirm_password = student_password2)
         data.save()
-        
     
     else:
         return render(request, 'register.html', {})
