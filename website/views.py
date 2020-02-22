@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect, HttpResponse
 from .models import Student
+import base64
 
 
 def home(request):
@@ -22,15 +23,29 @@ def register(request):
         student_email = request.POST['student-email']
         student_contact = request.POST['student-contact']
         student_branch = request.POST['student-branch']
-        student_password = request.POST['student-password']
-        student_password2 = request.POST['student-password2']
-        data = Student(student_name = student_name, student_id = student_id, student_contact = student_contact, student_email = student_email, student_branch = student_branch, password = student_password, confirm_password = student_password2)
+        encoded_password = base64.b64encode(b'{request.POST["student-password"]}')
+        data = Student(student_name = student_name, student_id = student_id, student_contact = student_contact, student_email = student_email, student_branch = student_branch, student_password = encoded_password)
         data.save()
-    
-    else:
-        return render(request, 'register.html', {})
+        print(encoded_password)
+        return render(request, 'login.html', {})
+   
+    return render(request, 'register.html', {})
 
 
 def login(request):
+    if request.method == 'POST':
+        student_id = request.POST['username']
+        encoded_password = base64.b64encode(b'{request.POST["password"]}')
+        print(encoded_password)
+        print(student_id)
+        print(request.POST["password"])
+        if Student.objects.filter(pk = student_id).exists():
+            if Student.objects.filter(student_password = encoded_password).exists():
+                print ('password matched')
+                return render(request, 'chatbot.html')
+            else:
+                return HttpResponse('wrong password')   
+        else:
+            return HttpResponse('Wrong ID number')
     return render(request, 'login.html', {})
 
