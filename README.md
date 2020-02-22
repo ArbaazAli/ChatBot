@@ -1,15 +1,15 @@
 # Chatbot
 ### Project tasks check list 
 
-* [] Forms
-    [x] Student Register
-    [x] Student login
+* [ ] Forms
+   * [x] Student Register
+   * [x] Student login
 
 * [x] Database table for student
 
-* [] Chatbot Page
+* [ ] Chatbot Page
  
-* [] Chatbot
+* [ ] Chatbot
 
 **Useful links**
 
