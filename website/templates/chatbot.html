@@ -10,38 +10,45 @@
     }
 </style> {% endblock %}
 {% block content %}
-<body>
+
     <div class="section">
         <div class="container">
             <div class="tile is-ancestor">
-                <div class="tile is-vertical is-8">
-                    <div class="tile is-parent">
-                        <article class="tile is-child notification is-danger">
-                          <p class="title">Wide tile</p>
-                          <p class="subtitle">Aligned with the right tile</p>
-                          <div class="content">
-                            <!-- Content -->
-                            {{output}}
-                            <form action="#" method="POST"> {% csrf_token %}
-                                <div class="control ">
-                                    <input name="input" class="input is-large is-rounded is-success" type="text" placeholder="Enter text...">
-                                </div>
-                                <div class="control">
-                                    <button class="button"> 
-                                        <span class="icon is-small">
-                                            <i class="fas fa-paper-plane"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                            </form>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vel, quam at cum, consequatur voluptatum sequi dolore pariatur sed recusandae molestiae ipsa sint eius repellendus animi explicabo iste voluptatem soluta facere vitae voluptas suscipit et, quasi obcaecati! Sequi repellat vel sed illum, alias totam nemo at voluptatem est, ab architecto?
-                          </div>    
-                        </article>
+            
+            </div>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column is-6">
+            <div class="card events-card">
+                <div class="card-table">
+                    <div class="content">
+                        <table class="table is-fullwidth is-striped">
+                            <tbody>
+                                <tr>
+                                    <td>{{output}}</td>
+                                </tr>
+                                <tr>
+                                    <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                    <form action="#" method="POST"> {% csrf_token %}
+                                        <td>    
+                                            <input name="input" class="input" type="text" placeholder="Enter text..." autofocus>    
+                                        </td>
+                                        <td class="level-right">
+                                            <button class="button"> 
+                                                <span class="icon is-small">
+                                                    <i class="fas fa-paper-plane"></i>
+                                                </span>
+                                            </button>
+                                        </td>
+                                    </form>    
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-  </body>
-
+    </div>        
+  
 {% endblock %}

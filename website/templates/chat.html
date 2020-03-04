@@ -1,0 +1,360 @@
+<html>
+<head>
+<title>CHAT</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .container
+    {
+        max-width:500 !important;
+        margin:auto;
+        font-family:sans-serif;
+        letter-spacing:0.5px;
+
+    }
+
+    img
+    {
+        max-width: 100%;
+        border-radius:50%;
+    }
+
+    .msg-header
+    {
+        border:1px solid #ccc;
+        width:100%;
+        height:10%;
+        border:bottom:none;
+        display:inline-block;
+        background-color:#007bff;
+    }
+
+    .msg-header-img
+    {
+        border-radius:50%;
+        width:40px;
+        margin-left:5%;
+        margin-top:12px;
+        float:left;
+    }
+
+    .tbl1
+    {
+        float:left;
+    }
+
+    .hed4
+    {
+        font-size:18px;
+        margin-left:5px;
+        color:#fff;
+            margin-bottom:1px;
+            margin-top:3px;
+        padding:0px 0px 0px 0px;
+    }
+
+    .hed6
+    {
+        color:#fff;
+        margin-left:7px;
+        margin-bottom:2px;
+            padding:0px 0px 0px 0px;
+    }
+
+    .header-icons
+    {
+        width:120px;
+        float:right;
+        margin-top:0px;
+        margin-right:10px;
+    }
+    .header-icons .fa
+    {
+        color:#fff;
+        cursor:pointer;
+        margin:10px;
+    }
+
+    .chat-page
+    {
+        padding:0 0 50px 0;
+
+    }
+
+    .msg-inbox
+    {
+        border:1px solid #ccc;
+        overflow:hidden;
+        padding-bottom:30px;
+    }
+
+    .chats
+    {
+        padding:30px 15px 0 25px;
+    }
+
+    .msg-page
+    {
+        height:516px;
+        overflow-y: auto;
+    }
+
+    .received-chats-img
+    {
+        display:inline-block;
+        width:20px;
+        float: left;
+    }
+
+    .received-msg
+    {
+        display:inline-block;
+        padding:0 0 0 10px;
+        vertical-align:top;
+        width:92%;
+    }
+
+    .received-msg-inbox
+    {
+        width:57%;
+    }
+
+    .received-msg-inbox p
+    {
+        background:#efefef none repeat scroll 0 0;
+        border-radius:10px;
+        color:#646464;
+        font-size:14px;
+        margin:0px;
+        padding:5px 10px 5px 12px;
+        width:100%;
+    }
+
+    .time
+    {
+        color:#777;
+        display:block;
+        font-size:12px;
+        margin:8px 0 0;
+    }
+    .outgoing-chats
+    {
+        overflow:hidden;
+        margin:26px 20px;
+    }
+    .outgoing-chats-msg p
+    {
+        background:#007bff none repeat scroll 0 0;
+        color:#fff;
+        border-radius:10px;
+        font-size:14px;
+        margin:0;
+        color:#fff;
+        padding:5px 10px 5px 12px;
+        width:100%;
+
+    }
+        .outgoing-chats-msg
+    {
+        float:left;
+        width:46%;
+        margin-left:45%;
+
+    }
+    .outgoing-chats-img
+    {
+        display:inline-block;
+        width:20px;
+        float:right;
+
+    }
+    .msg-bottom
+    {   
+        padding-left: 50px;
+        padding-top: 2px;
+        height: 60px;
+        background-color:#007bff;
+    }
+
+    .input-group
+    {
+        
+        position:relative;
+        margin-top:10px;
+        margin-right: 30px;
+        outline:none !important;
+        border-radius:20px;
+        width: 90%;
+        background-color: #fff;
+
+    }
+    .form-control
+    {   
+        border:none !important;
+        border-radius: 20px !important;
+    }
+    .input-group-text
+    {
+        background:transparent !important;
+        border:none !important;
+    }
+
+    .input-group .fa
+    {
+        color:#007bff;
+        float:right;
+    }
+    .bottom-icons
+    {
+        float:left;
+        margin-top:17px;
+        width:30%; important;
+        margin-left:22px;
+    }
+    .bottom-icons .fa
+    {
+        color:#fff;
+        padding:5px;
+    }
+    .form-control:focus
+    {
+        border-color:none;
+        box-shadow:none;
+        border-radius:20px;
+    }
+
+</style>    
+</head>
+    <body>
+        <div class="container">
+            <div class="msg-header">
+                <div class="msg-header-img">
+                    <img src="https://i.postimg.cc/W4WctMp9/download.jpg">
+                </div>
+                <div class="tbl1">
+                    <table>
+                        <tr>
+                        <td><h4 class="hed4">Narendra Modi</h4></td>
+                        </tr>
+                        <tr>
+                        <td><h6 class="hed6">1 second ago...</h6></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="header-icons">
+                    <i class="fa fa-phone"></i>
+                    <i class="fa fa-video-camera"></i>
+                    <i class="fa fa-info-circle"></i>
+                </div>
+            </div>
+            <div class="chat-page">
+                <div class="msg-inbox">
+                    <div class="chats">
+                        <div class="msg-page">
+                            <div class="received-chats">
+                                <div class="received-chats-img">
+                                <img src="https://i.postimg.cc/W4WctMp9/download.jpg">
+                                </div>
+                                <div class="received-msg">
+                                    <div class="received-msg-inbox">
+                                    <p>Hlo!!! Coding Master. How r u?</p>
+                                        <span class="time">12:00 PM | Oct 10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="outgoing-chats">
+                                <div class="outgoing-chats-msg">
+                                    <p>Hlo Sir...I'm fine..How are u?  </p>
+                                    <span class="time">12:05 PM | Oct 10</span>
+                                </div>
+                                <div class="outgoing-chats-img">
+                                    <img src= "https://i.postimg.cc/XY4R82pH/1570189759190.png">
+                                </div>
+                            </div>
+                            <div class="received-chats">
+                                <div class="received-chats-img">
+                                    <img src= "https://i.postimg.cc/W4WctMp9/download.jpg">
+                                </div>
+                                <div class="received-msg">
+                                    <div class="received-msg-inbox">
+                                    <p>I'm fine. So coding master you are really doing good job...keep it up...</p>
+                                        <span class="time">12:06 PM | Oct 10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="outgoing-chats">
+                                <div class="outgoing-chats-msg">
+                                    <p>Thanku very much sir.It's my duty.I want to contribute something towards my nation.</p>
+                                    <span class="time">12:07 PM | Oct 10</span>
+                                </div>
+                                <div class="outgoing-chats-img">
+                                    <img src=  "https://i.postimg.cc/XY4R82pH/1570189759190.png">
+                                </div>
+                            </div>
+                            <div class="received-chats">
+                                <div class="received-chats-img">
+                                    <img src="https://i.postimg.cc/W4WctMp9/download.jpg">
+                                </div>
+                                <div class="received-msg">
+                                    <div class="received-msg-inbox">
+                                        <p>Sure coding master,So when will your next video come</p>
+                                        <span class="time">12:09 PM | Oct 10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="outgoing-chats">
+                                <div class="outgoing-chats-msg">
+                                    <p>Sunday ,20 October</p>
+                                    <span class="time">12:10 PM | Oct 10</span>
+                                </div>
+                                <div class="outgoing-chats-img">
+                                    <img src=  "https://i.postimg.cc/XY4R82pH/1570189759190.png">
+                                </div>
+                            </div>
+                            <div class="received-chats">
+                                <div class="received-chats-img">
+                                    <img src="https://i.postimg.cc/W4WctMp9/download.jpg">
+                                </div>
+                                <div class="received-msg">
+                                    <div class="received-msg-inbox">
+                                        <p>I'm waiting  and my expectation is that your video will much better than your previous videos.</p>
+                                        <span class="time">12:10 PM | Oct 10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="outgoing-chats">
+                                <div class="outgoing-chats-msg">
+                                    <p>Definitely sir,i will try my best,So wait and watch...</p>
+                                    <span class="time">12:11 PM | Oct 10</span>
+                                </div>
+                                <div class="outgoing-chats-img">
+                                <img src=  "https://i.postimg.cc/XY4R82pH/1570189759190.png">
+                                </div>
+                            </div>
+                            <div class="received-chats">
+                                <div class="received-chats-img">
+                                    <img src="https://i.postimg.cc/W4WctMp9/download.jpg">
+                                </div>
+                                <div class="received-msg">
+                                    <div class="received-msg-inbox">
+                                        <p>OK coding master</p>
+                                        <span class="time">12:11 PM | Oct 10</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="msg-bottom">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="write message..."/>
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-paper-plane"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </body>
+</html>
